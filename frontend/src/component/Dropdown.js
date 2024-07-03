@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-const Dropdown = ({ provinces, selectedProvince, setSelectedProvince }) => (
+const Dropdown = ({ provinces,selectedProvince,setSelectedProvince}) => (
   <>
     <select 
       value={selectedProvince} 
