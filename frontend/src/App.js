@@ -12,7 +12,7 @@ const App = () => {
   const [selectedProvince, setSelectedProvince] = useState('');
 
   const searchByCountry = () => {
-    fetch(`http://localhost:5000/api/universities?country=${country}`).then(response => response.json()).then(data => {
+    fetch(`https://aubergine.onrender.com/api/universities?country=${country}`).then(response => response.json()).then(data => {
         setUniversities(data);
         const uniqueProvinces = [...new Set(data.map(uni => uni['state-province']))].filter(Boolean);
         setProvinces(uniqueProvinces);
