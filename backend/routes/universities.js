@@ -3,7 +3,7 @@ const axios = require('axios');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-  const { country, 'state-province': stateProvince } = req.query;
+  const { country } = req.query;
   let url = `http://universities.hipolabs.com/search?country=${country}`;
   
   try {

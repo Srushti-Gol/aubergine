@@ -16,7 +16,7 @@ const App = () => {
         setUniversities(data);
         const uniqueProvinces = [...new Set(data.map(uni => uni['state-province']))].filter(Boolean);
         setProvinces(uniqueProvinces);
-        setSelectedProvince(''); // reset the selected province
+        setSelectedProvince(''); // reset province
         setFilteredUniversities(data); // set the filtered universities to all fetched universities initially
       })
       .catch(error => console.error('Error fetching data:', error));
@@ -34,11 +34,7 @@ const App = () => {
     <>
       <Input country={country} setCountry={setCountry} searchByCountry={searchByCountry} />
       {country && provinces.length > 0 && (
-        <Dropdown 
-          provinces={provinces} 
-          selectedProvince={selectedProvince} 
-          setSelectedProvince={setSelectedProvince} 
-        />
+        <Dropdown provinces={provinces} selectedProvince={selectedProvince} setSelectedProvince={setSelectedProvince} />
       )}
       <div className="university-cards">
         {filteredUniversities.map(u => (
