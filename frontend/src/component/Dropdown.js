@@ -7,7 +7,7 @@ const Dropdown = ({ provinces,selectedProvince,setSelectedProvince}) => (
       value={selectedProvince} 
       onChange={(e) => setSelectedProvince(e.target.value)}
     >
-      <option value="">Select province</option>
+      <option value="">Select State</option>
       {provinces.map((province, index) => (
         <option key={index} value={province}>{province}</option>
       ))}
